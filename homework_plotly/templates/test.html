@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask Plotlyjs Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <style>
+        #banner {
+            padding: 4em 0 3em 0;
+            background-color: #1E2832;
+            color: rgba(255, 255, 255, 0.75);
+            background-attachment: fixed;
+            background-image: url("../img/overlay.png"), url('../img/header-bg.jpg');
+            background-size: cover;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        .flex-box {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        
+        .flex-box .item {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <section id="banner">
+        <h2>Belly Button Biodiversity Dashboard</h2>
+        <p>Use the interactive charts below to explore the dataset</p>
+    </section>
+    <!-- Banner END-->
+    <section id='tool-bar' ng-controller="dataCtrl">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Sample:</a>
+                <select ng-model="samples.value" ng-options="x for x in samples.list"></select>
+                <!-- search END -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#newMeta" aria-controls="newMeta" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                <div class="collapse navbar-collapse" id="newMeta">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <div class="nav-link">
+                                <label>AGE</label>
+                                <strong>data</strong>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="nav-link">
+                                <label>home</label>
+                                <strong>data</strong>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </section>
+    <!-- tool bar end -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('dataCtrl', function($scope) {
+
+            $scope.samples = {
+                type: 'select',
+                name: '940',
+                value: '940',
+                list: ['940', '943']
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask Plotlyjs Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body ng-app="myApp">
+    <!-- Banner -->
+    <section id="banner">
+        <h2>Belly Button Biodiversity Dashboard</h2>
+        <p>Use the interactive charts below to explore the dataset</p>
+    </section>
+    <!-- Banner END-->
+    <section id='tool-bar' ng-controller="dataCtrl">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="form-inline my-2 my-lg-0">
+                <a class="navbar-brand" href="#">Sample:</a>
+                <select class="form-control mr-sm-1" ng-model="samples.value" ng-options="x for x in samples.list"></select>
+            </div>
+
+            <!-- search END -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#newMeta" aria-controls="newMeta" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+            <div class="collapse navbar-collapse mr-auto" id="newMeta">
+                <ul class="navbar-nav">
+                </ul>
+            </div>
+        </nav>
+
+    </section>
+    <!-- tool bar end -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 gauge-box">
+                <div id="pie"></div>
+            </div>
+            <div class="col-md-6 col-xs-12 gauge-box">
+                <h5><strong>Button Washing Frequency</strong><br>Scrubs per Week</h5>
+                <div id="gauge">
+                </div>
+            </div>
+        </div>
+        <!-- first row END -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="bubble"></div>
+            </div>
+        </div>
+        <!-- second row END -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
