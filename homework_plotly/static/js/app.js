@@ -5,6 +5,18 @@ var colorRange = ['rgba(255, 133, 26, .8)', 'rgba(255, 146, 51, .8)',
     'rgba(255, 229, 204, .8)', 'rgba(255, 242, 230, .8)',
     'rgba(255, 255, 255, 0.8)'
 ];
+var pieColor = [
+    'rgba(255, 102, 0, .8)',
+    'rgba(255, 117, 26, .8)',
+    'rgba(255, 133, 51, .8)',
+    'rgba(255, 166, 77, .8)',
+    'rgba(255, 153, 102, .8)',
+    'rgba(255, 136, 77, .8)',
+    'rgba(255, 179, 102, .8)',
+    'rgba(255, 102, 102, .8)',
+    'rgba(255, 212, 128, .8)',
+    'rgba(255, 170, 128, 0.8)'
+];
 var app = angular.module('myApp', []);
 
 function buildMetadata(sample) {
@@ -112,6 +124,9 @@ function buildCharts(sample) {
         var pieData = [{
             values: data.sample_values.slice(0, 10),
             labels: data.otu_ids.slice(0, 10),
+            marker: {
+                colors: pieColor
+            },
             sort: true,
             hovertext: data.otu_labels.slice(0, 10),
             //hoverinfo: 'label+percent+hovertext',
